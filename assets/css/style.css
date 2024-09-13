@@ -672,7 +672,7 @@ nav {
     border-radius: 15px;
     padding: 20px;
     margin-bottom: 20px; 
-    max-width: 1250px; 
+    width: 100%; 
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     
 }
@@ -682,7 +682,7 @@ nav {
     background-color: var(--body-color);
     border-radius: 15px;
     padding: 40px;
-    max-width: 1250px; /* Limit width of each item */
+    width: 100%; /* Limit width of each item */
 }
 
 .education-item h1 {
@@ -717,18 +717,24 @@ nav {
     gap: 20px; /* Adjust gap between major and minor */
 }
 
-.major-container, .minor-container {
+.major-container{
     flex: 1;
+}
+.minor-container {
+    flex: 1;
+    justify-content: right;
 }
 
 .major-container ul, .minor-container ul {
     list-style: disc inside;
     font-size: 15px;
     padding-left: 20px;
+    text-align: left;
 }
 
 .education-item-container h1, .education-item-container h2 {
     margin-bottom: 15px;
+    text-align: left;
 }
 
 .education-item-container li:hover {
@@ -1170,7 +1176,7 @@ textarea{
 @media (max-width: 650px) {
 
     .about-content {
-        display: block;
+        display: grid;
         align-items: center;
         justify-content: center;
         max-width: 1200px;
@@ -1181,8 +1187,9 @@ textarea{
         justify-content: center;
         flex: 1;
         max-width: 300px;
-        margin-bottom: 20px;
-        margin-left: 16%;
+        margin-bottom: 30px;
+        align-items: center;
+        margin: 0 auto;
     }
 
     .menu-button {
@@ -1195,6 +1202,7 @@ textarea{
         color: var(--text-color);
         text-align: center;
         width: 100%;
+        
     }
     .skills-container h2 {
         margin-bottom: 20px;
@@ -1204,9 +1212,10 @@ textarea{
     }
     
     .skills-wrapper {
-        display: flex;
-        justify-content: space-around;
-        gap: 30px;
+        display: grid; /* Grid layout for stacking items */
+        justify-items: center; /* Center items horizontally */
+        align-items: center; /* Center items vertically */
+        gap: 30px; /* Space between the items */
         width: 100%;
         margin: 0 auto;
     }
@@ -1273,4 +1282,74 @@ textarea{
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
     }
+
+    .education-container {
+        padding: 5px;
+        background-color: var(--body-color);
+        color: var(--text-color);
+        text-align: left; 
+        max-width: 100%; 
+        justify-content: center;
+        
+    }
+    
+    .education-container h1 {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 40px;
+        font-weight: 600;
+        color: var(--third-color);
+    }
+    
+    .education-container h2 {
+        margin-bottom: 20px;
+        font-size: 30px;
+        font-weight: 800;
+    }
+    
+    /* Container for each education item */
+    .education-item {
+        background: var(--fourth-color);
+        border-radius: 15px;
+        padding: 20px;
+        margin-bottom: 20px; 
+        width: 100%; 
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        
+    }
+
+    .education-item-container {
+        background-color: var(--body-color);
+        border-radius: 15px;
+        padding: 40px;
+        width: 100%; /* Limit width of each item */
+    }
+    
+    .education-item h1 {
+        margin-bottom: 10px;
+        font-size: 28px;
+        font-weight: 750;
+        color: var(--text-color);
+    }
+    
+    .education-item h2 {
+        margin-bottom: 10px;
+        margin-top: 3px;
+        font-size: 25px;
+        font-weight: 700;
+    }
+    
+    .education-item h3 {
+        margin-bottom: 15px;
+        font-size: 20px;
+        font-weight: 500;
+    }
+    
+    .education-item h4 {
+        margin-bottom: 40px;
+        font-size: 15px;
+        font-weight: 400;
+    }
+    
+    
 }
