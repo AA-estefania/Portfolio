@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- Unicons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <!-- AOS (Animate On Scroll) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Main Content -->
+    <section class="about-me-wrapper">
+        <div class="about-me-content">
+            <img src="../assets/img/about.jpg" alt="Estefania Alfonso" class="about-me-image">
+            <div class="about-me-text">
+                <h2>About Me</h2>
+                <h5>Front-end Developer & <span>Designer</span></h5>
+                <p>Hi, I'm Estefania Alfonso, a senior at the University of Florida majoring in Computer Science with a minor in Digital Arts and Sciences. My journey in technology began with a fascination for how code can bring ideas to life, and it has grown into a deep passion for creating innovative solutions and solving complex problems.</p>
+                <p>My experience in programming spans various languages and technologies. From developing engaging web applications to experimenting with creative digital designs, I thrive on the challenge of turning concepts into functional, user-friendly software. My academic background has provided me with a solid foundation in software engineering, while my hands-on projects have honed my skills in practical coding and problem-solving.</p>
+                <p>In addition to my core programming skills, I am actively expanding my expertise in areas that are crucial for modern software development. I am currently delving into database management and optimization, learning how to design and maintain efficient databases that can handle large volumes of data. This knowledge is enhancing my ability to build robust, scalable applications that meet real-world needs.</p>
+                <p>I am also exploring emerging technologies and frameworks to stay ahead in the ever-evolving tech landscape. My goal is to continue growing as a full-stack developer, combining my backend skills with frontend creativity to deliver comprehensive and dynamic solutions.</p>
+                <p>As I prepare to embark on the next chapter of my career, I am excited about the opportunities to apply my skills in new and challenging environments. Whether it’s collaborating on innovative projects or contributing to cutting-edge solutions, I am eager to leverage my passion for coding and my growing technical acumen to make a meaningful impact in the tech industry.</p>
+            </div>
+            <a href="contact.html" class="contact-me-button">Contact Me</a> <!-- Contact Me Button -->
+        </div>
+    </section>
+
+    <hr class="divider"> <!-- Divider Line -->
+
+    <!-- ====== SKILLS SECTION ====== -->
+    <section class="skills-container" >
+        <h2>Skills</h2>
+        <div class="skills-wrapper">
+            <div class="skills-column">
+                <h3>Front-end</h3>
+                <ul>
+                    <li data-aos="fade-up" data-aos-delay="100">HTML5</li>
+                    <li data-aos="fade-up" data-aos-delay="200">CSS3</li>
+                    <li data-aos="fade-up" data-aos-delay="300">JavaScript</li>
+                    <li data-aos="fade-up" data-aos-delay="400">React</li>
+                    <li data-aos="fade-up" data-aos-delay="500">Bootstrap</li>
+                    <li data-aos="fade-up" data-aos-delay="600">Responsive Design</li>
+                </ul>
+            </div>
+            <div class="skills-column">
+                <h3>Back-end</h3>
+                <ul>
+                    <li data-aos="fade-up" data-aos-delay="100">Node.js</li>
+                    <li data-aos="fade-up" data-aos-delay="200">JavaScript</li>
+                    <li data-aos="fade-up" data-aos-delay="300">Python</li>
+                    <li data-aos="fade-up" data-aos-delay="400">Java</li>
+                    <li data-aos="fade-up" data-aos-delay="500">C++</li>
+                    <li data-aos="fade-up" data-aos-delay="600">SQL/NoSQL Databases</li>
+                </ul>
+            </div>
+            <div class="skills-column">
+                <h3>Software & Tools</h3>
+                <ul>
+                    <li data-aos="fade-up" data-aos-delay="100">Git/GitHub</li>
+                    <li data-aos="fade-up" data-aos-delay="200">Docker</li>
+                    <li data-aos="fade-up" data-aos-delay="300">Visual Studio Code</li>
+                    <li data-aos="fade-up" data-aos-delay="400">Maya</li>
+                    <li data-aos="fade-up" data-aos-delay="500">Unity</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function() {
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+        });
+        AOS.init();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <title>Header</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav id="header">
+            <div class="header-logo"> 
+                <img id="logo" src="../assets/img/logo.png" alt="avatar">
+            </div>
+            <div class="header-menu" id="myheaderMenu">
+                <ul class="header_menu_list">
+                    <li class="header_list"><a href="../index.html" class="header-link">Home</a></li>
+                    <li class="header_list"><a href="projects.html" class="header-link">Projects</a></li>
+                    <li class="header_list"><a href="about.html" class="header-link">About</a></li>
+                    <li class="header_list"><a href="contact.html" class="header-link">Contact</a></li>
+                </ul>
+                <button class="menu-button" onclick="toggleMenu()"><i class="uil uil-bars"></i></button> <!-- Menu Button -->
+            </div>
+            <div class="header-buttons">
+                <a href="../assets/pdf/download.pdf" download class="resume_btn">Resume<i class="uil uil-file-alt"></i></a>
+                <div class="dark-mode-switch" id="darkModeSwitch">
+                    <div class="slider"></div>
+                    <i class="uil uil-sun" id="sun"></i>
+                    <i class="uil uil-moon" id="moon"></i>
+                </div>
+            </div>
+        </nav>
+    
+        <!-- Popup Menu -->
+        <div id="popupMenu" class="popup-menu">
+            <div class="popup-content">
+                <span class="close-button" onclick="toggleMenu()">&times;</span>
+                <ul class="popup-menu-list">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Place script tag just before closing body tag -->
+    <script src="../assets/js/main.js"></script>
+    
+</body>
+</html>

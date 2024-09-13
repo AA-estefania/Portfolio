@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- ========= UNICONS ========= -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+    <!-- ========= CSS ========= -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!-- AOS Library CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Redirect to home.html -->
+   
+</head>
+<body>
+    <header>
+        <nav id="header">
+            <div class="header-logo"> 
+                <img id="logo" src="../assets/img/logo.png" alt="avatar">
+            </div>
+            <div class="header-menu" id="myheaderMenu">
+                <ul class="header_menu_list">
+                    <li class="header_list"><a href="index.html" class="header-link">Home</a></li>
+                    <li class="header_list"><a href="pages/projects.html" class="header-link">Projects</a></li>
+                    <li class="header_list"><a href="pages/about.html" class="header-link">About</a></li>
+                    <li class="header_list"><a href="pages/contact.html" class="header-link">Contact</a></li>
+                </ul>
+                <button class="menu-button" onclick="toggleMenu()"><i class="uil uil-bars"></i></button> <!-- Menu Button -->
+            </div>
+            <div class="header-buttons">
+                <a href="assets/pdf/download.pdf" download class="resume_btn">Resume<i class="uil uil-file-alt"></i></a>
+                <div class="dark-mode-switch" id="darkModeSwitch">
+                    <div class="slider"></div>
+                    <i class="uil uil-sun" id="sun"></i>
+                    <i class="uil uil-moon" id="moon"></i>
+                </div>
+            </div>
+        </nav>
+    
+        <!-- Popup Menu -->
+        <div id="popupMenu" class="popup-menu">
+            <div class="popup-content">
+                <span class="close-button" onclick="toggleMenu()">&times;</span>
+                <ul class="popup-menu-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pages/projects.html">Projects</a></li>
+                    <li><a href="pages/about.html">About</a></li>
+                    <li><a href="pages/contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========= CONTENT ========= -->
+    <main class="home-container">
+        <div class="content-wrapper">
+            <div class="wrapper">
+                <div class="icon linkedin" data-aos="fade-up" data-aos-delay="100">
+                    <div class="tooltip">Linkedin</div>
+                    <span><i class="uil uil-linkedin-alt"></i></span>
+                </div>
+                <div class="icon instagram" data-aos="fade-up" data-aos-delay="200">
+                    <div class="tooltip">Instagram</div>
+                    <span><i class="uil uil-instagram"></i></span>
+                </div>
+                <div class="icon github" data-aos="fade-up" data-aos-delay="300">
+                    <div class="tooltip">Github</div>
+                    <span><i class="uil uil-github-alt"></i></span>
+                </div>
+                <div class="icon youtube" data-aos="fade-up" data-aos-delay="400">
+                    <div class="tooltip">YouTube</div>
+                    <span><i class="uil uil-youtube"></i></span>
+                </div>
+            </div>
+            <div class="main-text">
+                <div class="main-text-card"  data-aos="zoom-in">
+                    <span>Estefania Alfonso</span>
+                </div>
+                <div class="main-name">
+                    <p>I am a <span class="typedText"></span></p>
+                </div>
+                <div class="main-text-info" data-aos="fade-left">
+                    <p>My journey blends creativity with technology, crafting 
+                        innovative solutions and visually appealing designs. 
+                        Welcome to my portfolio, where form meets function in seamless digital experiences.</p>
+                </div>
+                <div class="main-text-btn">
+                    <button class="btn cm-btn"  data-aos="zoom-in">Contact Me</button>
+                    <a href="assets/pdf/download.pdf" download class="btn dw-btn"  data-aos="zoom-in">Download Resume <i class="uil uil-download-alt"></i></a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <section class="about-container">
+        <div class="about-content">
+            <div class="about-image" data-aos="zoom-in">
+                <img src="assets/img/about.jpg" alt="Estefania Alfonso">
+            </div>
+            <div class="about-text" data-aos="fade-up">
+                <h2>About Me</h2>
+                <p>I am Estefania Alfonso, a senior Computer Science student at the University of Florida.
+                    I am a passionate full-stack programmer skilled in creating 
+                    visually compelling, user-centric interfaces and robust 
+                    back-end systems. My expertise in both client-side and 
+                    server-side technologies enables me to develop comprehensive 
+                    solutions that balance creativity with technical excellence. 
+                    With a focus on innovation and problem-solving, I deliver 
+                    scalable and efficient applications that exceed expectations.</p>
+            </div>
+        </div>
+    </section>
+    <!-- ====== SKILLS SECTION ====== -->
+    <section class="skills-container" >
+        <h2>Skills</h2>
+        <div class="skills-wrapper">
+            <div class="skills-column">
+                <h3>Front-end</h3>
+                <ul>
+                    <li data-aos="fade-up" data-aos-delay="100">HTML5</li>
+                    <li data-aos="fade-up" data-aos-delay="200">CSS3</li>
+                    <li data-aos="fade-up" data-aos-delay="300">JavaScript</li>
+                    <li data-aos="fade-up" data-aos-delay="400">React</li>
+                    <li data-aos="fade-up" data-aos-delay="500">Bootstrap</li>
+                    <li data-aos="fade-up" data-aos-delay="600">Responsive Design</li>
+                </ul>
+            </div>
+            <div class="skills-column">
+                <h3>Back-end</h3>
+                <ul>
+                    <li data-aos="fade-up" data-aos-delay="100">Node.js</li>
+                    <li data-aos="fade-up" data-aos-delay="200">JavaScript</li>
+                    <li data-aos="fade-up" data-aos-delay="300">Python</li>
+                    <li data-aos="fade-up" data-aos-delay="400">Java</li>
+                    <li data-aos="fade-up" data-aos-delay="500">C++</li>
+                    <li data-aos="fade-up" data-aos-delay="600">SQL/NoSQL Databases</li>
+                </ul>
+            </div>
+            <div class="skills-column">
+                <h3>Software & Tools</h3>
+                <ul>
+                    <li data-aos="fade-up" data-aos-delay="100">Git/GitHub</li>
+                    <li data-aos="fade-up" data-aos-delay="200">Docker</li>
+                    <li data-aos="fade-up" data-aos-delay="300">Visual Studio Code</li>
+                    <li data-aos="fade-up" data-aos-delay="400">Maya</li>
+                    <li data-aos="fade-up" data-aos-delay="500">Unity</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="projects-container">
+        <h2>My Projects</h2>
+        <div class="carousel">
+            <button class="carousel-arrow left-arrow"><i class="uil uil-angle-left"></i></button>
+            <div class="carousel-wrapper">
+                <div class="carousel-item" data-aos="slide-left" data-aos-delay="100">
+                    <div class="project-image">
+                        <img src="project1.jpg" alt="Project 1">
+                    </div>
+                    <div class="project-info">
+                        <h3>Project Name</h3>
+                        <p>Date: January 2023</p>
+                        <p>Filters: Web Development, JavaScript</p>
+                        <p>Description: A brief description of the project.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-aos="slide-left" data-aos-delay="300">
+                    <div class="project-image">
+                        <img src="project2.jpg" alt="Project 2">
+                    </div>
+                    <div class="project-info">
+                        <h3>Project Name</h3>
+                        <p>Date: February 2023</p>
+                        <p>Filters: UI/UX Design, React</p>
+                        <p>Description: A brief description of the project.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-aos="slide-left" data-aos-delay="500">
+                    <div class="project-image">
+                        <img src="project1.jpg" alt="Project 3">
+                    </div>
+                    <div class="project-info">
+                        <h3>Project Name</h3>
+                        <p>Date: January 2023</p>
+                        <p>Filters: Web Development, JavaScript</p>
+                        <p>Description: A brief description of the project.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-aos="slide-left" data-aos-delay="700">
+                    <div class="project-image">
+                        <img src="project2.jpg" alt="Project 4">
+                    </div>
+                    <div class="project-info">
+                        <h3>Project Name</h3>
+                        <p>Date: February 2023</p>
+                        <p>Filters: UI/UX Design, React</p>
+                        <p>Description: A brief description of the project.</p>
+                    </div>
+                </div>
+                <!-- Repeat for additional project items -->
+            </div>
+            <button class="carousel-arrow right-arrow"><i class="uil uil-angle-right"></i></button>
+        </div>
+         <!-- See All Projects Link -->
+        <div class="see-all-projects">
+            <a href="pages/projects.html">See All Projects</a>
+        </div>
+    </div>
+
+<section class="education-container">
+    <h1>Education</h1>
+    <div class="education-item">
+        <div class="education-item-container">
+            <h3>University of Florida, Gainesville, FL</h3>
+            <h4>August 2021 - May 2025</h4>
+            <div class="education-flex">
+                <div class="major-container"  data-aos="fade-in">
+                    <h1>Bachelor of Science in Computer Science</h1>
+                    <ul>
+                        <li>CDA 3101 - Introduction to Computer Organization</li>
+                        <li>COP 3530 - Data Structures and Algorithms</li>
+                        <li>CEN 3031 - Introduction to Software Engineering</li>
+                        <li>COP 4020 - Programming Language Concepts</li>
+                        <li>CIS 4301 - Information and Database Systems</li>
+                        <li>CNT 4007 - Computer Network Fundamentals</li>
+                        <li>COP 4600 - Operating Systems</li>
+                        <li>COP 4533 - Algorithm Abstraction & Design</li>
+                        <li>COP 4331 - Object-Oriented Programming</li>
+                        <li>CEN 4722 - Ux Design</li>
+                        <li>CNT 4731 - Multimedia Network Principles</li>
+                    </ul>
+                </div>
+                <div class="minor-container"  data-aos="fade-in"  data-aos-delay="500">
+                    <h2>Minor in Digital Arts and Sciences</h2>
+                    <ul>
+                        <li>DIG 2121 - Principles of Digital Visualization</li>
+                        <li>DIG 2632 - Creating Mobile Games</li>
+                        <li>DIG 3713 - Game Content Production 1</li>
+                        <li>DIG 3313C - 2D Digital Animation Techniques</li>
+                        <li>DIG 3305C - 3D Digital Animation Techniques</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h2>Contact Me</h2>
+                <p>Email: tifany1358@gmail.com</p>
+                <p>Phone: (786) 873-4364</p>
+            </div>
+            <div class="footer-section">
+                <h2>Follow Me</h2>
+                <ul class="social-links">
+                    <li><a href="#" class="social-icon uil uil-facebook-f"></a></li>
+                    <li><a href="#" class="social-icon uil uil-twitter"></a></li>
+                    <li><a href="#" class="social-icon uil uil-linkedin"></a></li>
+                    <li><a href="#" class="social-icon uil uil-instagram"></a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h2>Additional Information</h2>
+                <p>© 2024 Your Website. All rights reserved.</p>
+                <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ========= TYPING JS Link ========= -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <!-- AOS Library JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        
+        AOS.init();
+    </script>
+
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
