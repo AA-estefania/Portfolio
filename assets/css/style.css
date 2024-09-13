@@ -1,0 +1,1233 @@
+/* ===== Web Fonts ==== */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito';
+}
+:root {
+	--color-white: #ffffff;
+    --body-color: #fbffff;
+    --header-color: #ffffff;
+    --footer-color: #23b0ba;
+    --icon-color: #ffffff;
+
+    --text-color: #0a1a56; 
+    --text-color-hover: #f4a259;
+
+	--first-color: #013c59;
+	--second-color: #fbffff;
+	--third-color: #f4a259;
+	--fourth-color: #23b0ba;
+    
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --background-color: #f8ffffde;
+}
+body {
+    background-color: var(--body-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+body.dark{
+    --color-white: #000000;
+    --body-color: #0b0e1a;
+    --header-color: #121524;
+    --footer-color: #23b0ba;
+    --icon-color: #ffffff;
+
+    --text-color: #fcf4e4; 
+    --text-color-hover: #b4cdcb;
+
+	--first-color: #013c59;
+	--second-color: #fbffff;
+	--third-color: #f4a259;
+	--fourth-color: #23b0baee;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --background-color: #000c13db;
+}
+
+
+/* ====== HEADER ====== */
+nav {
+    margin-top: 20px;
+    border-radius: 60px;
+    width: 95%;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Ensure vertical centering */
+    height: 90px;
+    background: var(--header-color);
+    padding-inline: 9vw;
+    transition: .3s;
+    z-index: 100;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.header-logo {
+    display: flex;
+    align-items: center; /* Center vertically */
+}
+
+.header-logo img {
+    width: 65px;
+    height: 65px;
+}
+
+.header-menu {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* This will allow the menu to take up space between the logo and buttons */
+    justify-content: center; /* Center the menu horizontally */
+    margin-left: 20px; /* Space between the logo and the menu */
+}
+
+.header_menu_list {
+    display: flex;
+    gap: 20px; /* Space between menu items */
+}
+
+.header_list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 20px;
+    padding: 0 15px;
+    line-height: 90px; /* Align menu items vertically */
+}
+
+.header-link:hover {
+    color: var(--text-color-hover);
+}
+
+.header-link.active {
+    color: var(--fifth-color)!important; /* Example color for the active link */
+    font-weight: bold;
+}
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: 20px; /* Space between the menu and the buttons */
+}
+
+.dark-mode-switch {
+    position: relative;
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 60px;
+    height: 30px;
+    background-color: var(--fourth-color); /* Default background color */
+    border-radius: 15px; /* Rounded corners */
+    cursor: pointer;
+}
+
+.slider {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    min-width: 26px; /* Width of the slider */
+    height: 26px; /* Height of the slider */
+    background-color: var(--header-color); /* Slider color */
+    border-radius: 50%; /* Rounded corners to make it circular */
+    transition: transform 0.3s; /* Smooth transition */
+}
+
+#sun, #moon {
+    position: absolute;
+    font-size: 20px; /* Icon size */
+    color: var(--fourth-color); /* Icon color */  
+}
+
+#moon {
+    left: 4px;
+    opacity: 1;
+}
+
+#sun {
+    right: 4px;
+    opacity: 0;
+}
+
+.dark-mode-switch.dark #moon {
+    opacity: 0;
+}
+
+.dark-mode-switch.dark #sun {
+    opacity: 1;
+}
+
+
+.resume_btn {
+    display: flex;
+    align-items: center;
+    padding: 10px 10px; /* Adjust padding to match button size */
+    border: 3px solid var(--fourth-color);
+    background-color: transparent;
+    color: var(--fourth-color);
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 15px; 
+    font-weight: 600;
+    
+    transition: background-color 0.3s ease, color 0.3s ease;
+    line-height: 1; /* Ensure text is vertically centered */
+}
+
+.resume_btn i {
+    margin-right: 8px; /* Adds space between the icon and the text */
+}
+
+.resume_btn:hover {
+    background-color: var(--fourth-color);
+    color: var(--color-white);
+}
+
+/* Hide popup by default */
+.popup-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 200; /* Ensure it's above other elements */
+}
+
+.popup-content {
+    position: relative;
+    background-color: var(--header-color);
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.popup-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.popup-menu-list li {
+    margin: 15px 0;
+}
+
+.popup-menu-list a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.popup-menu-list a:hover {
+    color: var(--text-color-hover);
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--text-color);
+}
+.close-button:hover {
+    color: var(--text-color-hover);
+}
+
+
+/* Menu button styles */
+.menu-button {
+    display: none;
+    padding: 2px 10px;
+    border: 2px solid var(--header-color);
+    background-color: transparent;
+    color: var(--fourth-color);
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 35px;
+    font-weight: 600;
+    margin-left: 150px;
+}
+
+.menu-button:hover {
+    background-color: var(--fourth-color);
+    color: var(--color-white);
+}
+
+/* Basic styling for the footer */
+#footer {
+    background-color: var(--footer-color); /* Use a CSS variable or replace with color code */
+    color: var(--color-white); /* Use a CSS variable or replace with color code */
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.footer-section {
+    margin: 10px;
+    flex: 1;
+}
+
+.footer-section h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.footer-section p {
+    margin: 5px 0;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+}
+
+.social-links li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.social-icon {
+    font-size: 1.5em;
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: var(--third-color); 
+}
+
+/* ----- CONTAINER ----- */
+.home-container {
+    background-image: url('../img/image1.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+}
+
+.home-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color); /* Black overlay with 50% opacity */
+    z-index: 1;
+}
+
+.home-container > * {
+    position: relative;
+    z-index: 2; /* Ensure the text is above the overlay */
+    color: #ffffff; /* Set text color */
+}
+
+/* ----- ICONS ----- */
+.content-wrapper {
+    margin-top: 5%;
+    justify-content: center;
+    display: flex;
+    align-items: flex-start;
+    gap: 50px; /* Adjust gap between icons and text */
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Adjust gap between the icons */
+    margin-top: 0; /* Align icons with the text */
+    align-items: flex-start;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    color:var(--first-color);
+    position: relative;
+    transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.icon span {
+    display: flex;
+    justify-content: center;  /* Center icon horizontally */
+    align-items: center; 
+    width: 100%;              /* Full width of the parent container */
+    height: 100%; 
+    background: #fff;
+    border-radius: 50%;
+    font-size: 25px;
+    z-index: 2;
+    transition: 0.4s;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.icon .tooltip {
+    position: absolute;
+    left: -110px; /* Position the tooltip to the right of the icon */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 25px;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
+    transition: 0.4s;
+}
+
+.icon .tooltip:before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    background: #fff;
+    left: 105px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.icon:hover .tooltip {
+    opacity: 1;
+    pointer-events: auto;
+    justify-content: right; 
+}
+
+.icon:hover span,
+.icon:hover .tooltip {
+    color: #fff;
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.4);
+}
+
+.linkedin:hover span,
+.linkedin:hover .tooltip,
+.linkedin:hover .tooltip:before {
+    background: #0E76A8;
+}
+
+.instagram:hover span,
+.instagram:hover .tooltip,
+.instagram:hover .tooltip:before {
+    background: #DD2A7B;
+}
+
+.github:hover span,
+.github:hover .tooltip,
+.github:hover .tooltip:before {
+    background: #333;
+}
+
+.youtube:hover span,
+.youtube:hover .tooltip,
+.youtube:hover .tooltip:before {
+    background: #CD201F;
+}
+
+/* ----- MAIN TEXT BOX ----- */
+.main-text {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 60%; /* Adjust width of the text section */
+    padding-left: 10px;
+}
+.main-text-card span{
+    background: var(--third-color);
+    color: var(--color-white);
+    padding: 5px 20px;
+    font-size: 25px;
+    font-weight: 500;
+    border-radius: 30px;
+}
+.main-name{
+    font-size: 50px;
+    font-weight: 800;
+    color: var(--text-color);
+    margin-block: 20px;
+}
+.typedText{
+    text-transform: capitalize;
+    color: var(--third-color);
+}
+.main-text-info{
+    font-size: 18px;
+    font-weight: 600;
+    width: 110%;
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+.main-text-btn{
+    display: flex;
+    gap: 30px;
+}
+.main-text-btn>.cm-btn{
+    background: var(--fourth-color);
+    color: var(--color-white);
+    border: none;
+    border-radius: 50px;
+    padding: 5px 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 3px solid var(--fourth-color);
+}
+.main-text-btn>.cm-btn:hover{
+    background: transparent;
+    border: 3px solid var(--fourth-color);
+    color: var(--fourth-color);
+}
+.main-text-btn>.dw-btn{
+    background: transparent;
+    border: 3px solid var(--fourth-color);
+    color: var(--fourth-color);
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 20px;
+}
+.main-text-btn>.dw-btn:hover{
+    background: var(--fourth-color);
+    color: var(--color-white);
+}
+.social_icons{
+    display: flex;
+    margin-top: 5em;
+    gap: 30px;
+}
+
+/* ----- ABOUT CONTAINER ----- */
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 10vw;
+    
+    background: var(--fourth-color);
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.about-image {
+    flex: 1;
+    max-width: 300px;
+    margin-right: 40px;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.about-text {
+    flex: 2;
+    color: var(--second-color);
+}
+
+.about-text h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: var(--second-color);
+    font-weight: 700;
+}
+
+.about-text p {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--second-color);
+}
+
+/* ====== SKILLS SECTION ====== */
+.skills-container {
+    padding: 50px;
+    background-color: var(--body-color);
+    color: var(--text-color);
+    text-align: center;
+}
+
+.skills-container h2 {
+    margin-bottom: 20px;
+    font-size: 35px;
+    font-weight: 800;
+    color: var(--third-color);
+}
+
+.skills-wrapper {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skills-column {
+    flex: 1;
+}
+
+.skills-column h3 {
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-weight: 700;
+    color: var(--fourth-color);
+}
+
+.skills-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skills-column ul li {
+    display: inline-block;
+    margin-bottom: 15px;
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--body-color); /* Text color inside bubble */
+    background-color: var(--fourth-color); /* Blue background */
+    border-radius: 50px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.skills-column ul li:hover {
+    transform: scale(1.5); /* Slightly larger on hover */
+    background-color: var(--third-color); /* Darker blue background on hover */
+    color: var(--body-color);
+    
+}
+
+/* ====== EDUCATION SECTION ====== */
+.education-container {
+    padding: 50px;
+    background-color: var(--body-color);
+    color: var(--text-color);
+    text-align: left; 
+    max-width: 95%; 
+    justify-content: center;
+    margin-left: 5%;
+}
+
+.education-container h1 {
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--third-color);
+}
+
+.education-container h2 {
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+/* Container for each education item */
+.education-item {
+    background: var(--fourth-color);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px; 
+    max-width: 1250px; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    
+}
+
+/* Specific container for individual education details */
+.education-item-container {
+    background-color: var(--body-color);
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 1250px; /* Limit width of each item */
+}
+
+.education-item h1 {
+    margin-bottom: 10px;
+    font-size: 28px;
+    font-weight: 850;
+    color: var(--text-color);
+}
+
+.education-item h2 {
+    margin-bottom: 10px;
+    margin-top: 3px;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.education-item h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.education-item h4 {
+    margin-bottom: 40px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.education-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Adjust gap between major and minor */
+}
+
+.major-container, .minor-container {
+    flex: 1;
+}
+
+.major-container ul, .minor-container ul {
+    list-style: disc inside;
+    font-size: 15px;
+    padding-left: 20px;
+}
+
+.education-item-container h1, .education-item-container h2 {
+    margin-bottom: 15px;
+}
+
+.education-item-container li:hover {
+    color: var(--fifth-color);
+}
+
+.projects-container {
+    padding: 50px 5vw;
+    background: var(--fourth-color);
+    color: var(--second-color);
+    text-align: center;
+    position: relative;
+}
+
+
+.projects-container h2 {
+    margin-bottom: 20px;
+    font-size: 35px;
+    font-weight: 800;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.carousel-wrapper {
+    display: flex;
+    overflow: hidden;
+    width: 90%;
+    max-width: 1500px;
+}
+
+/* Base styles for carousel items */
+.carousel-item {
+    flex: 0 0 300px; /* Ensures the box is exactly 300px wide */
+    margin: 0 10px;
+    background-color: var(--body-color);
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative; /* Important for the sliding effect */
+    overflow: hidden;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover effect */
+.carousel-item:hover {
+    transform: scale(1.05); /* Slightly increase the size */
+}
+
+/* New color slide-up effect */
+.carousel-item::before {
+    content: '';
+    position: absolute;
+    top: 100%; /* Start below the box */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--third-color); /* New color */
+    transition: top 0.3s ease;
+    z-index: 0; /* Behind the text */
+}
+
+.carousel-item:hover::before {
+    top: 0; /* Slide up to cover the box */
+}
+
+/* Adjust text color on hover */
+.carousel-item:hover .project-info h3,
+.carousel-item:hover .project-info p {
+    color: var(--body-color); /* New text color for contrast */
+}
+
+/* Ensure text appears above the sliding color */
+.project-info {
+    position: relative;
+    z-index: 1; /* Above the sliding color */
+    color: var(--text-color); /* Default text color */
+    margin-top: 15px;
+    text-align: left;
+}
+
+.project-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.carousel-arrow {
+    background-color: var(--body-color);
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.left-arrow {
+    left: 0;
+}
+
+.right-arrow {
+    right: 0;
+}
+
+.carousel-arrow i {
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+/* Hover Effect */
+.carousel-arrow:hover {
+    background-color: var(--third-color); /* Change background color on hover */
+    transform: translateY(-50%) scale(1.2); /* Increase size on hover */
+}
+
+.carousel-arrow:hover i {
+    color: var(--body-color); /* Change icon color on hover */
+}
+
+.see-all-projects {
+    text-align: right;
+    margin-top: 30px;
+    position: absolute;
+    bottom: 15px;
+    right: 50px;
+}
+
+.see-all-projects a {
+    font-size: 18px;
+    color: var(--first-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.see-all-projects a:hover {
+    color: var(--fourth-color); /* Change this to your desired hover color */
+}
+
+
+
+.about-me-wrapper {
+    
+    background-color: var(--body-color);
+}
+
+.about-me-content {
+    padding: 50px 90px;
+    background: var(--body-color);
+    
+}
+
+.about-me-image {
+    float: left;
+    width: 350px;
+    margin-top: 150px;
+    margin: 100px 30px 20px 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-me-text {
+    font-size: 16px;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.about-me-text h2 {
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.about-me-text h5 {
+    color: var(--third-color);
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .about-me-text  span {
+    color: var(--sixth-color);
+  }
+
+.about-me-text p {
+    margin-bottom: 16px;
+}
+
+/* Divider Line */
+.divider {
+    border: 0;
+    width: 90%;
+    justify-content: center;
+    height: 2px;
+    background: var(--footer-color); /* Change this color to match your design */
+    margin: 30px auto;
+}
+
+/* About Me Button */
+.contact-me-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: var(--body-color);
+    background-color: var(--fourth-color);
+    border: 3px solid var(--fourth-color); /* Change this color to match your design */
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+    position: absolute;
+    transition: all 0.3s ease;
+    right: 80px; /* Adjust as needed */
+}
+
+.contact-me-button:hover {
+    background-color: var(--body-color); /* Darker shade for hover effect */
+    border: 3px solid var(--fourth-color);
+    color: var(--fourth-color);
+    transform:  scale(1.1);
+}
+
+/* ----- CONTACT BOX ----- */
+.contact-section{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 3;
+}
+.contact-section h1{
+    font-size: 50px;
+}
+.contact-top-header{
+    display: flex;
+    flex-direction: column;
+    margin-top: 110px;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+    color: var(--text-color);
+}
+.contact-info{
+    margin-top: 50px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 30px;
+    width: 100%;
+    height: 315px;
+    background: var(--third-color);
+    border-radius: 10px;
+    box-shadow: 1px 8px 10px 2px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    font-size: 25px;
+}
+.contact-info>h2{
+    color: var(--color-white);
+    margin-bottom: 20px;
+}
+.contact-info>p{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-white);
+    margin-block: 5px;
+}
+.contact-info p>i{
+    font-size: 18px;
+}
+.contact-info::after{
+    background: var(--color-white);
+}
+.contact-info:hover.contact-info h2,
+.contact-info:hover.contact-info p,
+.contact-info:hover.contact-info i{
+    color: var(--fifth-color-hover);
+    z-index: 2;
+}
+
+/* ----- CONTACT FORM ----- */
+.row{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+}
+.col{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.form-control{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+.form-inputs{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+.input-field{
+    width: 50%;
+    height: 55px;
+    background: transparent;
+    border: 3px solid var(--fourth-color);
+    color: var(--fourth-color);
+    font-size: 15px;
+    border-radius: 10px;
+    padding-inline: 20px;
+    outline: none;
+}
+textarea{
+    width: 100%;
+    height: 250px;
+    background: transparent;
+    border: 3px solid var(--fourth-color);
+    color: var(--fourth-color);
+    font-size: 15px;
+    border-radius: 10px;
+    padding: 15px 20px;
+    outline: none;
+    resize: none;
+}
+.form-button-send>.btn{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    background: var(--fourth-color);
+    color: var(--color-white);
+    border-radius: 10px;
+    padding: 5px 10px;
+    border: none;
+    font-size: 18px
+}
+.form-button-send>.btn:hover{
+    background: var(--third-color);
+}
+.form-button-send i{
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+
+
+/* ===== Responsive - Media Query: 900px ===== */
+
+@media (max-width: 900px) {
+    .header_menu_list {
+        display: none; /* Hide menu names on small screens */
+    }
+    
+    .menu-button {
+        display: block; /* Show menu button on small screens */
+    }
+
+    .education-flex {
+        display: block;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .major-container ul, .minor-container ul {
+        list-style: disc inside;
+        font-size: 15px;
+        padding-left: 0px;
+        margin-bottom: 20px;
+    }
+
+    .about-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px 20px;
+        
+    }
+    
+    .about-content {
+        display: flex;
+        align-items: center;
+        max-width: 1200px;
+        width: 100%;
+    }
+    
+
+    .about-image {
+        flex: 1;
+        max-width: 300px;
+        margin-right: 20px;
+    }
+    
+    .about-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .projects-container {
+        padding: 50px 5vw;
+        color: var(--text-color);
+        text-align: center;
+        position: relative;
+    }
+
+    .carousel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    
+    .carousel-wrapper {
+        display: flex;
+        overflow: hidden;
+        width: 90%;
+        max-width: 500px;
+    }
+
+}
+
+
+/* ===== Responsive - Media Query: 650px ===== */
+@media (max-width: 650px) {
+
+    .about-content {
+        display: block;
+        align-items: center;
+        justify-content: center;
+        max-width: 1200px;
+        width: 100%;
+    }
+
+    .about-image {
+        justify-content: center;
+        flex: 1;
+        max-width: 300px;
+        margin-bottom: 20px;
+        margin-left: 16%;
+    }
+
+    .menu-button {
+        margin-left: 50px;
+    }
+    
+    .skills-container {
+        padding: 10px;
+        background-color: var(--body-color);
+        color: var(--text-color);
+        text-align: center;
+    }
+
+    .carousel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    
+    .carousel-wrapper {
+        display: flex;
+        overflow: hidden;
+        width: 80%;
+        max-width: 400px;
+    }
+    .about-me-image {
+        float: left;
+        width: 300px;
+        margin-top: 150px;
+        margin: auto;
+        justify-content: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    }
+}
+/* ===== Responsive - Media Query: 650px ===== */
+@media (max-width: 550px) {
+
+    .header-menu {
+        display: flex;
+        align-items: center;
+        flex-grow: 1; /* This will allow the menu to take up space between the logo and buttons */
+        justify-content: center; /* Center the menu horizontally */
+        margin-left: 0px; /* Space between the logo and the menu */
+    }
+    
+    
+}
